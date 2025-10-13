@@ -3,7 +3,6 @@
       margin: 0;
       padding: 0;
       overflow-x: hidden;
-      /* optional: prevent horizontal scroll */
   }
 
   .mlr {
@@ -76,12 +75,12 @@
 
   /* Banner section */
 
-  /* Container height fixed to viewport */
+  
   .bg {
       height: 818px;
-      /* or use 100vh for full screen */
+
       overflow: hidden;
-      /* prevent child overflow */
+
   }
 
   /* Background image */
@@ -92,23 +91,21 @@
       background-position: center;
       width: 101%;
       height: 100%;
-      /* fills parent */
       position: relative;
   }
 
-  /* Image inside blur container */
+
   .col-12 img {
       height: 100%;
       object-fit: cover;
       display: block;
   }
 
-  /* Optional: ensure row has no extra margin */
   .bgimg .row {
       margin: 0;
   }
 
-  /* Remove extra padding in container-fluid */
+
   .container-fluid.m {
       padding: 0;
   }
@@ -609,23 +606,22 @@
       color: #fff;
   }
 
-  /* Brand-specific hover colors */
+
   .social-icons a:nth-child(1):hover {
       background: #1877f2;
-      /* Facebook */
+
   }
 
   .social-icons a:nth-child(2):hover {
       background: #1da1f2;
-      /* Twitter */
+
   }
 
   .social-icons a:nth-child(3):hover {
       background: #5865F2;
-      /* Discord */
+/
   }
 
   .social-icons a:nth-child(4):hover {
       background: #0077b5;
-      /* LinkedIn */
   }

@@ -11,7 +11,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
             const counters = document.querySelectorAll('.stat-number');
-            const speed = 200; // The lower the slower
+            const speed = 200; 
             
             function animateCounter(counter) {
                 const target = +counter.getAttribute('data-target');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     counter.innerText = Math.ceil(count + increment);
                     setTimeout(() => animateCounter(counter), 1);
                 } else {
-                    // Format numbers with commas for large values
+
                     if (target >= 1000) {
                         counter.innerText = target.toLocaleString();
                     } else {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
-            // Function to check if element is in viewport
+
             function isInViewport(element) {
                 const rect = element.getBoundingClientRect();
                 return (
@@ -41,8 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
                 );
             }
-            
-            // Start animation when element comes into view
+
             function checkScroll() {
                 counters.forEach(counter => {
                     if (isInViewport(counter) && counter.innerText === '0') {
@@ -51,9 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
             
-            // Initial check
             checkScroll();
             
-            // Check on scroll
             window.addEventListener('scroll', checkScroll);
         });

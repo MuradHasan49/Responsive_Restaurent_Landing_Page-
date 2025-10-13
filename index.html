@@ -12,42 +12,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* ---------- MOBILE VIEW ONLY ---------- */
-        /* 📱 When screen is small: make it horizontal scroll */
+        /* MOBILE VIEW ONLY  */
+
         @media (max-width: 768px) {
             .category {
                 overflow-x: auto;
                 flex-wrap: nowrap;
                 gap: 10px;
                 scrollbar-width: none;
-                /* Hide scrollbar (Firefox) */
+
             }
 
             .category::-webkit-scrollbar {
                 display: none;
-                /* Hide scrollbar (Chrome/Safari) */
+
             }
 
             .category a {
                 flex: 0 0 auto;
-                /* Prevent shrinking */
+
             }
         }
 
         @media (max-width: 991px) {
 
-            /* Top bar container for hamburger + logo + icons */
+
             .navbar .top-bar {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 width: 100%;
                 position: relative;
-                min-height: 70px;
-                /* lock height to prevent movement */
+
             }
 
-            /* Hamburger left */
+
             .navbar-toggler {
                 position: absolute;
                 left: 10px;
@@ -56,7 +55,6 @@
                 z-index: 1000;
             }
 
-            /* Logo centered top */
             .logo {
                 position: absolute;
                 left: 50%;
@@ -72,7 +70,6 @@
                 padding: 10px 10px;
             }
 
-            /* Icons right */
             .icon {
                 position: absolute;
                 right: 10px;
@@ -81,12 +78,12 @@
                 z-index: 1000;
             }
 
-            /* Collapsible menu below top bar */
+
             .collapse.navbar-collapse {
                 width: 100%;
                 background-color: #111;
                 margin-top: 70px;
-                /* below top bar */
+
                 border-radius: 8px;
                 text-align: center;
             }
@@ -288,7 +285,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div style="position: relative;" class="container-fluid">
-            <!-- Top bar wrapper for mobile -->
+
             <div class="top-bar">
                 <!-- Hamburger -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -296,13 +293,13 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Icons (right) -->
+                <!-- Icons right -->
                 <div class="icon d-flex align-items-center">
                     <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
                     <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                 </div>
 
-                <!-- Logo (centered only on mobile) -->
+                <!-- Logo -->
                 <div class="logo">
                     <a href="#"><img src="/IMG/logo/Logo@3x.png" alt="Logo"></a>
                 </div>
