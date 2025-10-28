@@ -346,11 +346,11 @@
   }
 
   .rowgap {
-      gap: 30px;
+      /* gap: 30px; */
   }
 
   .rowgap2 {
-      gap: 30px;
+      /* gap: 30px; */
       margin-top: 100px;
   }
 

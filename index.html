@@ -1,717 +1,856 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Restaurent Landing Page | Murad Hasan</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <style>
-        /* MOBILE VIEW ONLY  */
+      /* MOBILE VIEW ONLY  */
 
-        @media (max-width: 768px) {
-            .category {
-                overflow-x: auto;
-                flex-wrap: nowrap;
-                gap: 10px;
-                scrollbar-width: none;
-
-            }
-
-            .category::-webkit-scrollbar {
-                display: none;
-
-            }
-
-            .category a {
-                flex: 0 0 auto;
-
-            }
+      @media (max-width: 991px) {
+        .food-text p {
+          font-size: 20px;
+          line-height: 30px;
+          color: #ffffff;
+          margin-left: 10px;
+        }
+        .navbar {
+          margin-top: 35px;
+        }
+        .navbar .top-bar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          position: relative;
         }
 
-        @media (max-width: 991px) {
+        .navbar-toggler {
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1000;
+        }
 
-            .navbar{
-                margin-top: 35px;
-            }
-            .navbar .top-bar {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-                position: relative;
+        .logo {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 999;
+          padding: 0px 0px 0px 0px;
+        }
 
-            }
+        .logo a img {
+          height: 100px;
+          width: 100px;
+          padding: 10px 10px;
+        }
 
+        .icon {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 1000;
+        }
 
-            .navbar-toggler {
-                position: absolute;
-                left: 10px;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 1000;
-            }
+        .collapse.navbar-collapse {
+          width: 100%;
+          background-color: #111;
+          margin-top: 70px;
 
-            .logo {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 999;
-                padding: 0px 0px 0px 0px;
-            }
+          border-radius: 8px;
+          text-align: center;
+        }
 
-            .logo a img {
-                height: 100px;
-                width: 100px;
-                padding: 10px 10px;
-            }
+        .navbar-nav .nav-link {
+          padding: 10px 0;
+        }
 
-            .icon {
-                position: absolute;
-                right: 10px;
-                top: 50%;
-                transform: translateY(-50%);
-                z-index: 1000;
-            }
+        .navbar-nav {
+          padding: 0px;
+        }
 
+        .col-12 img {
+          width: 101%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
 
-            .collapse.navbar-collapse {
-                width: 100%;
-                background-color: #111;
-                margin-top: 70px;
+        /* bannr */
+        .text {
+          width: 280px;
+          height: 324px;
+          background-color: transparent;
+          position: absolute;
+          top: 0;
+          left: 10%;
+        }
 
-                border-radius: 8px;
-                text-align: center;
-            }
+        .sp {
+          font-size: 29px;
+          line-height: 44px;
+          color: #ffffff;
+        }
 
-            .navbar-nav .nav-link {
-                padding: 10px 0;
-            }
+        .text p {
+          font-size: 14px;
+          line-height: 24px;
+          color: #ffffff;
+        }
 
-            .navbar-nav {
-                padding: 0px;
-            }
+        /* btn */
+        .banner-text button {
+          width: 130%;
+          height: 65px;
+          border-radius: 40px;
+          background-color: #ffffff;
+          position: absolute;
+          top: 55%;
+          left: 0;
+          margin-bottom: 10px;
+        }
 
-            .col-12 img {
-                width: 101%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-            }
+        .text-btn {
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 28px;
+          color: #000000;
+        }
 
-            /* bannr */
-            .text {
-                width: 280px;
-                height: 324px;
-                background-color: transparent;
-                position: absolute;
-                top: 0;
-                left: 10%;
-            }
+        .row {
+          flex-direction: column !important;
+          margin-top: 30px;
+        }
 
-            .sp {
-                font-size: 29px;
-                line-height: 44px;
-                color: #ffffff;
-            }
+        .mlr {
+          padding: 0px 20px 0px 20px;
+        }
 
-            .text p {
+        .first {
+          width: 200%;
+          height: 100%;
+        }
 
-                font-size: 14px;
-                line-height: 24px;
-                color: #ffffff;
-            }
+        .second {
+          width: 200%;
+          height: 430px;
+          position: relative;
+        }
 
-            /* btn */
-            .banner-text button {
-                width: 130%;
-                height: 65px;
-                border-radius: 40px;
-                background-color: #ffffff;
-                position: absolute;
-                top: 55%;
-                left: 0;
-                margin-bottom: 10px;
-            }
+        .food-text h2 {
+          font-size: 48px;
+          line-height: 70px;
+          font-weight: bold;
+          color: #ffffff;
+        }
 
-            .text-btn {
-                font-size: 18px;
-                font-weight: bold;
-                line-height: 28px;
-                color: #000000;
-            }
+        .siz {
+          width: 100%;
+        }
 
-            .row {
-                flex-direction: column !important;
-                margin-top: 30px;
-            }
+        .menu {
+          display: block;
+          margin-left: 35%;
+        }
 
-            .mlr {
-                padding: 0px 20px 0px 20px;
-            }
+        .cont {
+          width: 300%;
+        }
 
-            .first {
-                width: 200%;
-                height: 100%;
+        .all-btn {
+          width: 90%;
+        }
 
-            }
+        .stats-container {
+          width: 410%;
+          margin-top: 50px;
+        }
 
+        .food-text h2 {
+          font-size: 40px;
+          margin-left: 10px;
+        }
+
+        .Become {
+          display: inline;
+          margin-left: 0px;
+        }
+
+        .search-text h2 {
+          margin-top: 30px;
+          font-size: 50px;
+        }
+
+        .search {
+          margin-top: 30px;
+        }
+
+        .bt {
+          margin-left: 0px;
+        }
+
+        .ssize {
+          width: 415px;
+          margin: auto;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .e-text h3 {
+          padding-top: 43px;
+          width: 427px;
+          font-size: 47px;
+          line-height: 70px;
+          font-weight: bold;
+          color: #ffffff;
+        }
+
+        .e-text p {
+          width: 200%;
+        }
+
+        .last-btn {
+          width: 200%;
+          margin-bottom: 60px;
+        }
+
+        .gap {
+          margin-top: 80px;
+        }
+
+        .map {
+          width: 200%;
+          height: 470px;
+        }
+
+        .footer-top {
+          margin-top: 600px;
+        }
+
+        .fot-col3 {
+          width: 100%;
+        }
+
+        .fot-col3 h5 {
+          font-size: 45px;
+        }
+
+        .footer-links li a {
+          transition: color 0.3s ease;
+          font-size: 30px;
+        }
+
+        .fot-last {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+        }
+
+        .footer-top {
+          height: 100%;
+        }
+      }
+
+      @media (max-width: 1366px) {
+        .mlr {
+          padding: 0px 0px 0px 0px;
+        }
+        .first {
+          width: 90%;
+          margin-left: 20px;
+          overflow: hidden;
+        }
+        .video-container video {
+          width: 75%;
+        }
+        .play-btn {
+          left: 40%;
+        }
+        .cont {
+          width: 380px;
+        }
+        .rowgap {
+          margin: -10px 20px 0px 20px;
+        }
+        .rowgap2 {
+          margin: 0px 20px 0px 20px;
+          margin-top: 20px;
+        }
+        .pa img {
+          width: 380px;
+        }
+        .mapgap {
+          gap: 10px;
+          margin: 0px 20px 0px 20px;
+        }
+        .map {
+          margin-top: 30px;
+          height: 90%;
+          width: 96%;
+        }
+        .g {
+          gap: 0px;
+          /* margin-left: 20px; */
+          margin: 0px 20px 0px 20px;
+        }
+        .fot-last {
+          margin: 28px 20px 0px 20px;
+        }
+      }
+      @media (max-width: 768px) {
+        .first {
+          width: 450px;
+          margin-left: 20px;
+          overflow: scroll;
+          height: 300px;
+        }
+        .vgap{
+            gap: 30px;
+        }
             .second {
-                width: 200%;
-                height: 430px;
-                position: relative;
-            }
-
-            .food-text h2 {
-                font-size: 48px;
-                line-height: 70px;
-                font-weight: bold;
-                color: #ffffff;
-            }
-
-            .siz {
-                width: 100%;
-            }
-
-            .menu {
-                display: block;
-                margin-left: 35%;
-            }
-
-            .cont {
-                width: 300%;
-            }
-
-            .all-btn {
-                width: 90%;
-            }
-
-            .stats-container {
-                width: 410%;
-                margin-top: 50px;
-            }
-
-            .food-text h2 {
-                font-size: 40px;
-                margin-left: 10px;
-            }
-
-            .Become {
-                display: inline;
-                margin-left: 0px;
-            }
-
-            .search-text h2 {
-                margin-top: 30px;
-                font-size: 50px;
-            }
-
-            .search {
-                margin-top: 30px;
-            }
-
-            .bt {
-                margin-left: 0px;
-            }
-
-            .ssize {
-                width: 415px;
-                margin: auto;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .e-text h3 {
-                padding-top: 43px;
-                width: 427px;
-                font-size: 47px;
-                line-height: 70px;
-                font-weight: bold;
-                color: #ffffff;
-            }
-
-            .e-text p {
-                width: 200%;
-            }
-
-            .last-btn {
-                width: 200%;
-                margin-bottom: 60px;
-            }
-
-            .gap {
-                margin-top: 80px;
-            }
-
-            .map {
-                width: 200%;
-                height: 470px;
-            }
-
-            .footer-top {
-                margin-top: 600px;
-            }
-
-            .fot-col3 {
-                width: 100%;
-            }
-
-            .fot-col3 h5 {
-                font-size: 45px;
-            }
-
-            .footer-links li a {
-                transition: color 0.3s ease;
-                font-size: 30px;
-            }
-
-            .fot-last {
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 30px;
-            }
-
-            .footer-top {
-                height: 100%;
-            }
+        width: 600px;
+        margin-left: 20px;
+        height: 430px;
+        position: relative;
+    }
+        .category {
+          overflow-x: auto;
+          flex-wrap: nowrap;
+          gap: 10px;
+          scrollbar-width: none;
         }
+
+        .category::-webkit-scrollbar {
+          display: none;
+        }
+
+        .category a {
+          flex: 0 0 auto;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <div style="position: relative;" class="container-fluid">
+      <div style="position: relative" class="container-fluid">
+        <div class="top-bar">
+          <!-- Hamburger -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-            <div class="top-bar">
-                <!-- Hamburger -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+          <!-- Icons right -->
+          <div class="icon d-flex align-items-center">
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </div>
 
-                <!-- Icons right -->
-                <div class="icon d-flex align-items-center">
-                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                </div>
-
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="#"><img src="/IMG/logo/Logo@3x.png" alt="Logo"></a>
-                </div>
-            </div>
-
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Welcome</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Our Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Franchise</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
-            </div>
+          <!-- Logo -->
+          <div class="logo">
+            <a href="#"><img src="/IMG/logo/Logo@3x.png" alt="Logo" /></a>
+          </div>
         </div>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Welcome</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Our Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Franchise</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
     <!-- banner section -->
-    <div class="container-fluid m ">
-        <div class="row bgimg">
-            <div class="col-12">
-                <img src="/IMG/BannerIMG/image.png" alt="">
-                <div class="banner-text">
-                    <div class="text">
-                        <h1 class="sp">Welcome! </h1>
-                        <span class="sp">We Made Delicious</span>
-                        <span class="sp">Food for You </span>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        <button class="text-btn">Ordr Online</button>
-                    </div>
-                </div>
+    <div class="container-fluid m">
+      <div class="row bgimg">
+        <div class="col-12">
+          <img src="/IMG/BannerIMG/image.png" alt="" />
+          <div class="banner-text">
+            <div class="text">
+              <h1 class="sp">Welcome!</h1>
+              <span class="sp">We Made Delicious</span>
+              <span class="sp">Food for You </span>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.
+              </p>
+              <button class="text-btn">Ordr Online</button>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- text and video -->
     <div class="container-fluid mlr">
-        <div class="gap"></div>
-        <div class="food-text d-flex flex-column align-items-center ">
-            <h2>Why We are Best Food Maker</h2>
-            <div class="pra">
-                <p class="siz">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                    scrambled it
-                    to make a type specimen book. Lorem ipsum dolor sit amet consectetur adipisi?</p>
-            </div>
+      <div class="gap"></div>
+      <div class="food-text d-flex flex-column align-items-center">
+        <h2>Why We are Best Food Maker</h2>
+        <div class="pra">
+          <p class="siz">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem scrambled it to make a type specimen book. Lorem
+            ipsum dolor sit amet consectetur adipisi?
+          </p>
         </div>
-        <div class="row vgap">
-            <div class="col-6">
-                <div class="p first">
-                    <p>
-                        It is a long established fact that a reader will be distracted layout. The point of using Lorem
-                        Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using English.
-                        Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model
-                        text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
-                        versions have evolved over the years, sometimes by accident, sometimes on purpose It is a long
-                        established fact that a reader will be distracted by the readable content of a page when looking
-                        at
-                        and the like. Read More
-                        It is a long established fact that a reader will be distracted layout. The point of using Lorem
-                        Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using English.
-                        Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model
-                        text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
-                        versions have evolved over the years, sometimes by accident, sometimes on purpose It is a long
-                        established fact that a reader will be distracted by the readable content of a page when looking
-                        at
-                        and the like. Read More
-                        It is a long established fact that a reader will be distracted layout. The point of using Lorem
-                        Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using English.
-                        Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model
-                        text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
-                        versions have evolved over the years, sometimes by accident, sometimes on purpose It is a long
-                        established fact that a reader will be distracted by the readable content of a page when looking
-                        and the like. <span>Read More</span>
-                    </p>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="second">
-                    <div class="video-container">
-                        <video id="myVideo" width="800" height="430" muted>
-                            <source src="/Assets/Video/3192081-uhd_3840_2160_25fps.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="play-btn" id="playBtn">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+      </div>
+      <div class="row vgap">
+        <div class="col-6">
+          <div class="p first">
+            <p>
+              It is a long established fact that a reader will be distracted
+              layout. The point of using Lorem Ipsum is that it has a
+              more-or-less normal distribution of letters, as opposed to using
+              English. Many desktop publishing packages and web page editors now
+              use Lorem Ipsum as their default model text, and a search for
+              'lorem ipsum' will uncover many web sites still in their infancy.
+              Various versions have evolved over the years, sometimes by
+              accident, sometimes on purpose It is a long established fact that
+              a reader will be distracted by the readable content of a page when
+              looking at and the like. Read More It is a long established fact
+              that a reader will be distracted layout. The point of using Lorem
+              Ipsum is that it has a more-or-less normal distribution of
+              letters, as opposed to using English. Many desktop publishing
+              packages and web page editors now use Lorem Ipsum as their default
+              model text, and a search for 'lorem ipsum' will uncover many web
+              sites still in their infancy. Various versions have evolved over
+              the years, sometimes by accident, sometimes on purpose It is a
+              long established fact that a reader will be distracted by the
+              readable content of a page when looking at and the like. Read More
+              It is a long established fact that a reader will be distracted
+              layout. The point of using Lorem Ipsum is that it has a
+              more-or-less normal distribution of letters, as opposed to using
+              English. Many desktop publishing packages and web page editors now
+              use Lorem Ipsum as their default model text, and a search for
+              'lorem ipsum' will uncover many web sites still in their infancy.
+              Various versions have evolved over the years, sometimes by
+              accident, sometimes on purpose It is a long established fact that
+              a reader will be distracted by the readable content of a page when
+              looking and the like. <span>Read More</span>
+            </p>
+          </div>
         </div>
+        <div class="col-6">
+          <div class="second">
+            <div class="video-container">
+              <video id="myVideo" width="800" height="430" muted>
+                <source
+                  src="/Assets/Video/3192081-uhd_3840_2160_25fps.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <div class="play-btn" id="playBtn">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="container-fluid mlr">
-        <div class="gap"></div>
-        <div class="food-text d-flex flex-column align-items-center ">
-            <h2>Our Best & Delicious <span class="menu">Menu</span></h2>
-        </div>
-        <div class="category d-flex ">
-            <a href="#">All</a>
-            <a href="#">Chiffon & Rolls</a>
-            <a href="#">Bread</a>
-            <a href="#">Donut</a>
-            <a href="#">Pastry & Danish</a>
-            <a href="#">Cakes</a>
-            <a href="#">Cookies</a>
-        </div>
+      <div class="gap"></div>
+      <div class="food-text d-flex flex-column align-items-center">
+        <h2>Our Best & Delicious <span class="menu">Menu</span></h2>
+      </div>
+      <div class="category d-flex">
+        <a href="#">All</a>
+        <a href="#">Chiffon & Rolls</a>
+        <a href="#">Bread</a>
+        <a href="#">Donut</a>
+        <a href="#">Pastry & Danish</a>
+        <a href="#">Cakes</a>
+        <a href="#">Cookies</a>
+      </div>
 
-        <div class="all-box">
-            <div class="row rowgap">
-                <div class="col-4">
-                    <div class="cont">
-                        <div class="ingbox d-flex justify-content-center">
-                            <img width="280" height="270" src="/IMG/box-bg/image 1101.png" alt="">
-                        </div>
-                        <div class="box-text d-flex flex-column">
-                            <h3>Naan Burger</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            <div class="svgicon d-flex justify-content-between">
-                                <span>$1.85</span>
-                                <img src="IMG/box-bg/Button.png" alt="">
-                            </div>
-                        </div>
-                    </div>
+      <div class="all-box">
+        <div class="row rowgap">
+          <div class="col-4">
+            <div class="cont">
+              <div class="ingbox d-flex justify-content-center">
+                <img
+                  width="280"
+                  height="270"
+                  src="/IMG/box-bg/image 1101.png"
+                  alt=""
+                />
+              </div>
+              <div class="box-text d-flex flex-column">
+                <h3>Naan Burger</h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="svgicon d-flex justify-content-between">
+                  <span>$1.85</span>
+                  <img src="IMG/box-bg/Button.png" alt="" />
                 </div>
-                <div class="col-4">
-                    <div class="cont">
-                        <div class="ingbox d-flex justify-content-center">
-                            <img width="280" height="270" src="/IMG/box-bg/2.png" alt="">
-                        </div>
-                        <div class="box-text d-flex flex-column">
-                            <h3>Butter Chicken Taco</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            <div class="svgicon d-flex justify-content-between">
-                                <span>$1.15</span>
-                                <img src="IMG/box-bg/Button.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="cont">
-                        <div class="ingbox d-flex justify-content-center">
-                            <img width="280" height="270" src="/IMG/box-bg/3.png" alt="">
-                        </div>
-                        <div class="box-text d-flex flex-column">
-                            <h3>Chicken Burger</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            <div class="svgicon d-flex justify-content-between">
-                                <span>$2.00</span>
-                                <img src="IMG/box-bg/Button.png " alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            <div class="row rowgap ">
-                <div class="col-4">
-                    <div class="cont">
-                        <div class="ingbox d-flex justify-content-center">
-                            <img width="280" height="270" src="/IMG/box-bg/4.png" alt="">
-                        </div>
-                        <div class="box-text d-flex flex-column">
-                            <h3>Cheese Chicken Naan</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            <div class="svgicon d-flex justify-content-between">
-                                <span>$3.50</span>
-                                <img src="IMG/box-bg/Button.png " alt="">
-                            </div>
-                        </div>
-                    </div>
+          </div>
+          <div class="col-4">
+            <div class="cont">
+              <div class="ingbox d-flex justify-content-center">
+                <img width="280" height="270" src="/IMG/box-bg/2.png" alt="" />
+              </div>
+              <div class="box-text d-flex flex-column">
+                <h3>Butter Chicken Taco</h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="svgicon d-flex justify-content-between">
+                  <span>$1.15</span>
+                  <img src="IMG/box-bg/Button.png" alt="" />
                 </div>
-                <div class="col-4">
-                    <div class="cont">
-                        <div class="ingbox d-flex justify-content-center">
-                            <img width="280" height="270" src="/IMG/box-bg/5.png" alt="">
-                        </div>
-                        <div class="box-text d-flex flex-column">
-                            <h3>3 Layer Burger</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            <div class="svgicon d-flex justify-content-between">
-                                <span>$4.99</span>
-                                <img src="IMG/box-bg/Button.png " alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="cont">
-                        <div class="ingbox d-flex justify-content-center">
-                            <img width="280" height="270" src="/IMG/box-bg/6.png" alt="">
-
-                        </div>
-                        <div class="box-text d-flex flex-column">
-                            <h3>Sandwich</h3>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            <div class="svgicon d-flex justify-content-between">
-                                <span>$2.85</span>
-                                <img src="IMG/box-bg/Button.png " alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            <div class="d-flex flex-column align-items-center">
-                <button class="all-btn">See ALL</button>
+          </div>
+          <div class="col-4">
+            <div class="cont">
+              <div class="ingbox d-flex justify-content-center">
+                <img width="280" height="270" src="/IMG/box-bg/3.png" alt="" />
+              </div>
+              <div class="box-text d-flex flex-column">
+                <h3>Chicken Burger</h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="svgicon d-flex justify-content-between">
+                  <span>$2.00</span>
+                  <img src="IMG/box-bg/Button.png " alt="" />
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-
-
-    <div class="container-fluid mlr">
-        <div class="gap"></div>
-        <div class="food-text d-flex flex-column align-items-center ">
-            <h2>We believe in making quality food</h2>
-        </div>
-
-        <div class="row">
-            <div class="col-3">
-                <div class="stats-container">
-                    <div class="stat-item d-flex justify-content-center align-items-center">
-                        <div class="stat-number stat-text" data-target="2">0</div>
-                        <div class="stat-text">M+</div>
-                    </div>
-                    <div class="stat-label d-flex justify-content-center align-items-center mt-2">
-                        <h4 stat-label>Happy Customers</h4>
-                    </div>
+        <div class="row rowgap">
+          <div class="col-4">
+            <div class="cont">
+              <div class="ingbox d-flex justify-content-center">
+                <img width="280" height="270" src="/IMG/box-bg/4.png" alt="" />
+              </div>
+              <div class="box-text d-flex flex-column">
+                <h3>Cheese Chicken Naan</h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="svgicon d-flex justify-content-between">
+                  <span>$3.50</span>
+                  <img src="IMG/box-bg/Button.png " alt="" />
                 </div>
+              </div>
             </div>
-            <div class="col-3">
-                <div class="stats-container">
-                    <div class="stat-item d-flex justify-content-center align-items-center">
-                        <div class="stat-number stat-text" data-target="98">0</div>
-                        <div class="stat-text">%</div>
-                    </div>
-                    <div class="stat-label d-flex justify-content-center align-items-center mt-2">
-                        <h4 stat-label>Customer Satisfaction</h4>
-                    </div>
+          </div>
+          <div class="col-4">
+            <div class="cont">
+              <div class="ingbox d-flex justify-content-center">
+                <img width="280" height="270" src="/IMG/box-bg/5.png" alt="" />
+              </div>
+              <div class="box-text d-flex flex-column">
+                <h3>3 Layer Burger</h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="svgicon d-flex justify-content-between">
+                  <span>$4.99</span>
+                  <img src="IMG/box-bg/Button.png " alt="" />
                 </div>
+              </div>
             </div>
-            <div class="col-3">
-                <div class="stats-container">
-                    <div class="stat-item d-flex justify-content-center align-items-center">
-                        <div class="stat-number stat-text" data-target="20">0</div>
-                        <div class="stat-text">+</div>
-                    </div>
-                    <div class="stat-label d-flex justify-content-center align-items-center mt-2">
-                        <h4 stat-label>Our Branches </h4>
-                    </div>
+          </div>
+          <div class="col-4">
+            <div class="cont">
+              <div class="ingbox d-flex justify-content-center">
+                <img width="280" height="270" src="/IMG/box-bg/6.png" alt="" />
+              </div>
+              <div class="box-text d-flex flex-column">
+                <h3>Sandwich</h3>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                </p>
+                <div class="svgicon d-flex justify-content-between">
+                  <span>$2.85</span>
+                  <img src="IMG/box-bg/Button.png " alt="" />
                 </div>
+              </div>
             </div>
-            <div class="col-3">
-                <div class="stats-container">
-                    <div class="stat-item d-flex justify-content-center align-items-center">
-                        <div class="stat-number stat-text" data-target="100">0</div>
-                        <div class="stat-text">+</div>
-                    </div>
-                    <div class="stat-label d-flex justify-content-center align-items-center mt-2">
-                        <h4 stat-label>Total Employees </h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid mlr">
-        <div class="gap"></div>
-        <div class="food-text d-flex flex-column justify-content-center  align-items-center">
-            <h2>Start The Adventure Today And <span class="Become">Become a Franchisee </span> </h2>
-        </div>
-        <div class="mt-3 ">
-            <p class="text-t">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                took a galley of type and scrambled it to make a type specimen book. It has survived not only
-                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                passages, and more recently with desktop publishing software like Aldus PageMaker including
-                versions of Lorem Ipsum.</p>
+          </div>
         </div>
         <div class="d-flex flex-column align-items-center">
-            <button class="all-btn ">Become a Franchisee</button>
+          <button class="all-btn">See ALL</button>
         </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mlr">
+      <div class="gap"></div>
+      <div class="food-text d-flex flex-column align-items-center">
+        <h2>We believe in making quality food</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+          <div class="stats-container">
+            <div
+              class="stat-item d-flex justify-content-center align-items-center"
+            >
+              <div class="stat-number stat-text" data-target="2">0</div>
+              <div class="stat-text">M+</div>
+            </div>
+            <div
+              class="stat-label d-flex justify-content-center align-items-center mt-2"
+            >
+              <h4 stat-label>Happy Customers</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="stats-container">
+            <div
+              class="stat-item d-flex justify-content-center align-items-center"
+            >
+              <div class="stat-number stat-text" data-target="98">0</div>
+              <div class="stat-text">%</div>
+            </div>
+            <div
+              class="stat-label d-flex justify-content-center align-items-center mt-2"
+            >
+              <h4 stat-label>Customer Satisfaction</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="stats-container">
+            <div
+              class="stat-item d-flex justify-content-center align-items-center"
+            >
+              <div class="stat-number stat-text" data-target="20">0</div>
+              <div class="stat-text">+</div>
+            </div>
+            <div
+              class="stat-label d-flex justify-content-center align-items-center mt-2"
+            >
+              <h4 stat-label>Our Branches</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="stats-container">
+            <div
+              class="stat-item d-flex justify-content-center align-items-center"
+            >
+              <div class="stat-number stat-text" data-target="100">0</div>
+              <div class="stat-text">+</div>
+            </div>
+            <div
+              class="stat-label d-flex justify-content-center align-items-center mt-2"
+            >
+              <h4 stat-label>Total Employees</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mlr">
+      <div class="gap"></div>
+      <div
+        class="food-text d-flex flex-column justify-content-center align-items-center"
+      >
+        <h2>
+          Start The Adventure Today And
+          <span class="Become">Become a Franchisee </span>
+        </h2>
+      </div>
+      <div class="mt-3 rowgap">
+        <p class="text-t">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum five centuries,
+          but also the leap into electronic typesetting, remaining essentially
+          unchanged. It was popularised in the 1960s with the release of
+          Letraset sheets containing Lorem Ipsum passages, and more recently
+          with desktop publishing software like Aldus PageMaker including
+          versions of Lorem Ipsum.
+        </p>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <button class="all-btn">Become a Franchisee</button>
+      </div>
     </div>
     <!-- Our Clients Are Saying -->
     <div class="container-fluid mlr">
-        <div class="gap"></div>
-        <div class="food-text d-flex flex-column align-items-center ">
-            <h2>We believe in making quality food</h2>
-        </div>
+      <div class="gap"></div>
+      <div class="food-text d-flex flex-column align-items-center">
+        <h2>We believe in making quality food</h2>
+      </div>
 
-        <div class="row p rowgap2">
-            <div class="col-4 pa">
-                <img src="/IMG/box-bg/clients/1.png" alt="">
-            </div>
-            <div class="col-4 pa">
-                <img src="/IMG/box-bg/clients/2.png" alt="">
-            </div>
-            <div class="col-4 pa">
-                <img src="/IMG/box-bg/clients/3.png" alt="">
-            </div>
+      <div class="row p rowgap2">
+        <div class="col-4 pa">
+          <img src="/IMG/box-bg/clients/1.png" alt="" />
         </div>
-        <div class="row p rowgap2">
-            <div class="col-4 pa">
-                <img src="/IMG/box-bg/clients/4.png" alt="">
-            </div>
-            <div class="col-4 pa">
-                <img src="/IMG/box-bg/clients/5.png" alt="">
-            </div>
-            <div class="col-4 pa">
-                <img src="/IMG/box-bg/clients/6.png" alt="">
-            </div>
+        <div class="col-4 pa">
+          <img src="/IMG/box-bg/clients/2.png" alt="" />
         </div>
+        <div class="col-4 pa">
+          <img src="/IMG/box-bg/clients/3.png" alt="" />
+        </div>
+      </div>
+      <div class="row p rowgap2">
+        <div class="col-4 pa">
+          <img src="/IMG/box-bg/clients/4.png" alt="" />
+        </div>
+        <div class="col-4 pa">
+          <img src="/IMG/box-bg/clients/5.png" alt="" />
+        </div>
+        <div class="col-4 pa">
+          <img src="/IMG/box-bg/clients/6.png" alt="" />
+        </div>
+      </div>
     </div>
 
     <div class="container-fluid bg-w">
-        <div class="supoort">
-            <div class="div-bg">
-                <div class="search-text d-flex flex-column align-items-center ">
-                    <h2>For more Support</h2>
-                </div>
-                <div class="search">
-                    <form class="d-flex ssize " role="search">
-                        <input class="form-control" type="search" placeholder="Enter Email" aria-label="Search" />
-                        <button class="bt" type="submit">Subscribe</button>
-                    </form>
-                </div>
-            </div>
+      <div class="supoort">
+        <div class="div-bg">
+          <div class="search-text d-flex flex-column align-items-center">
+            <h2>For more Support</h2>
+          </div>
+          <div class="search">
+            <form class="d-flex ssize" role="search">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Enter Email"
+                aria-label="Search"
+              />
+              <button class="bt" type="submit">Subscribe</button>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- map -->
     <div class="container-fluid mlr">
-        <div class="row mapgap gap">
-            <div class="col-6">
-                <div class="e-text ">
-                    <h3>
-                        Our Restaurants.
-                        Where to Find Us?
-                    </h3>
-                    <p>Want to have a superb meal in an exceptional setting <br> with family, friends or work
-                        colleagues, here are the addresses of our restaurants.</p>
-                    <button class="last-btn">Find The Nearest Cheffest</button>
-                </div>
-            </div>
-            <div class="col-6 ">
-                <div class="map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116833.83187900356!2d90.33728817319133!3d23.780975728128134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1759725880523!5m2!1sen!2sbd"
-                        style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
+      <div class="row mapgap gap">
+        <div class="col-6">
+          <div class="e-text">
+            <h3>Our Restaurants. Where to Find Us?</h3>
+            <p>
+              Want to have a superb meal in an exceptional setting <br />
+              with family, friends or work colleagues, here are the addresses of
+              our restaurants.
+            </p>
+            <button class="last-btn">Find The Nearest Cheffest</button>
+          </div>
         </div>
+        <div class="col-6">
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116833.83187900356!2d90.33728817319133!3d23.780975728128134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1759725880523!5m2!1sen!2sbd"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- footer -->
     <div class="container-fluid mlr footer-top">
-        <div class="row gap g">
-            <div class="col-3 fot-col3">
-                <h5>Our Products</h5>
-                <ul class="footer-links">
-                    <li><a href="#">Our menus</a></li>
-                    <li><a href="#">Our burgerss</a></li>
-                    <li><a href="#">Our times sides</a></li>
-                    <li><a href="#">Our naandwiches</a></li>
-                </ul>
-            </div>
-            <div class="col-3 fot-col3">
-                <h5>Legal Information</h5>
-                <ul class="footer-links">
-                    <li><a href="#">Legal Notice</a></li>
-                </ul>
-            </div>
-            <div class="col-3 fot-col3">
-                <h5>Contact us</h5>
-                <ul class="footer-links">
-                    <li><a href="#">Contacts</a></li>
-                    <li><a href="#">Our addresses</a></li>
-                    <li><a href="#">Become a Times Square franchisee</a></li>
-                </ul>
-            </div>
-            <div class="col-3">
-                <div class="payment-method visa"><img src="/IMG/logo/About us.png" alt=""></div>
-            </div>
+      <div class="row gap g">
+        <div class="col-3 fot-col3">
+          <h5>Our Products</h5>
+          <ul class="footer-links">
+            <li><a href="#">Our menus</a></li>
+            <li><a href="#">Our burgerss</a></li>
+            <li><a href="#">Our times sides</a></li>
+            <li><a href="#">Our naandwiches</a></li>
+          </ul>
         </div>
-
-
-        <div class="fot-last d-flex justify-content-between">
-            <div class="fot-left">
-                <div class="social-icons copyright">
-                    <a href="https://www.facebook.com/share/15aAyZLhuq/"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="fot-right">
-                <div class="copyright">
-                    <p>&copy; 2025 Murad Hasan. All rights reserved.</p>
-                </div>
-            </div>
+        <div class="col-3 fot-col3">
+          <h5>Legal Information</h5>
+          <ul class="footer-links">
+            <li><a href="#">Legal Notice</a></li>
+          </ul>
         </div>
+        <div class="col-3 fot-col3">
+          <h5>Contact us</h5>
+          <ul class="footer-links">
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Our addresses</a></li>
+            <li><a href="#">Become a Times Square franchisee</a></li>
+          </ul>
+        </div>
+        <div class="col-3">
+          <div class="payment-method visa">
+            <img src="/IMG/logo/About us.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="fot-last d-flex justify-content-between">
+        <div class="fot-left">
+          <div class="social-icons copyright">
+            <a href="https://www.facebook.com/share/15aAyZLhuq/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="fot-right">
+          <div class="copyright">
+            <p>&copy; 2025 Murad Hasan. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+  </body>
 </html>
